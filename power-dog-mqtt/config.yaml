@@ -1,0 +1,22 @@
+name: "Power Dog MQTT Bridge"
+description: "PowerDog MQTT Bridge"
+version: "1.0.0"
+slug: "power-dog"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+homeassistant_api: true
+hassio_api: true
+startup: services
+services:
+  - mqtt:need
+options:
+  power_dog_host:
+  power_dog_password:
+schema:
+  power_dog_host: str
+  power_dog_password: password
