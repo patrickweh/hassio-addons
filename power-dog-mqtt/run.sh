@@ -13,7 +13,7 @@ set -e
 trap 'exit 1' ERR
 
 # Start the first PHP command in the background
-php83 /opt/power-dog run &
+php83 /opt/power-dog-mqtt run &
 
 # Wait for all background jobs to finish
 wait
