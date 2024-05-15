@@ -17,6 +17,8 @@ services:
 options:
   power_dog_host:
   power_dog_password:
+  refresh_interval: 5
 schema:
   power_dog_host: str
   power_dog_password: password
+  refresh_interval: int

@@ -1,6 +1,7 @@
 #!/usr/bin/with-contenv bashio
 export POWER_DOG_HOST=$(bashio::config "power_dog_host")
 export POWER_DOG_PASSWORD=$(bashio::config "power_dog_password")
+export REFRESH_INTERVAL=$(bashio::config "refresh_interval")
 
 export MQTT_HOST=$(bashio::services mqtt "host")
 export MQTT_AUTH_PASSWORD=$(bashio::services mqtt "password")
@@ -14,6 +15,7 @@ trap 'exit 1' ERR
 
 # Start the first PHP command in the background
 php83 /opt/power-dog-mqtt run &
+php83 /opt/power-dog-mqtt mqtt:listen &
 
 # Wait for all background jobs to finish
 wait
